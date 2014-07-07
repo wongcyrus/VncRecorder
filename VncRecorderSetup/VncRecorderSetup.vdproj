@@ -15,7 +15,13 @@
     {
         "Entry"
         {
-        "MsmKey" = "8:_4494419C28AEA625E5E2209C690211E4"
+        "MsmKey" = "8:_9AF0847B92C07163CF3A4CFF2CC4D79B"
+        "OwnerKey" = "8:_E409C6246E1041BBB696A0CF4113DB20"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_DAD4FA5F1AE958823C783913E8449892"
         "OwnerKey" = "8:_E409C6246E1041BBB696A0CF4113DB20"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -27,18 +33,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_F2F74743189A3062D4205A3EDFD91671"
-        "OwnerKey" = "8:_E409C6246E1041BBB696A0CF4113DB20"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_4494419C28AEA625E5E2209C690211E4"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E409C6246E1041BBB696A0CF4113DB20"
         "MsmSig" = "8:_UNDEFINED"
@@ -46,7 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_F2F74743189A3062D4205A3EDFD91671"
+        "OwnerKey" = "8:_DAD4FA5F1AE958823C783913E8449892"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9AF0847B92C07163CF3A4CFF2CC4D79B"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -67,6 +67,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.0,Profile=Client"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4 Client Profile (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.0,Profile=Client"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -83,6 +99,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -112,14 +136,14 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_4494419C28AEA625E5E2209C690211E4"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_9AF0847B92C07163CF3A4CFF2CC4D79B"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Ionic.Zip, Version=1.9.3.0, Culture=neutral, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_4494419C28AEA625E5E2209C690211E4"
+                    "_9AF0847B92C07163CF3A4CFF2CC4D79B"
                     {
                     "Name" = "8:Ionic.Zip.dll"
                     "Attributes" = "3:512"
@@ -143,14 +167,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_F2F74743189A3062D4205A3EDFD91671"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_DAD4FA5F1AE958823C783913E8449892"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:VncSharp, Version=1.0.0.0, Culture=neutral, PublicKeyToken=61974755c7bfea7c, processorArchitecture=x86"
                 "ScatterAssemblies"
                 {
-                    "_F2F74743189A3062D4205A3EDFD91671"
+                    "_DAD4FA5F1AE958823C783913E8449892"
                     {
                     "Name" = "8:VncSharp.dll"
                     "Attributes" = "3:512"
@@ -231,7 +255,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:VncRecorderSetup"
         "ProductCode" = "8:{15F06639-3E54-4E67-ADF5-19B112A350BD}"
-        "PackageCode" = "8:{16256E5A-468E-4393-8388-FDF1E6E76EF9}"
+        "PackageCode" = "8:{925502E5-DC85-4FA4-A8BB-E1F79D513369}"
         "UpgradeCode" = "8:{9179F7A0-B0AA-42B1-8083-C357028F7E33}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
