@@ -128,7 +128,7 @@
                 {
                 "Name" = "8:.NET Framework"
                 "Message" = "8:[VSDNETMSG]"
-                "FrameworkVersion" = "8:.NETFramework,Version=v4.5"
+                "FrameworkVersion" = "8:.NETFramework,Version=v4.0,Profile=Client"
                 "AllowLaterVersions" = "11:FALSE"
                 "InstallUrl" = "8:http://go.microsoft.com/fwlink/?LinkId=395269"
                 }
@@ -255,7 +255,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:VncRecorderSetup"
         "ProductCode" = "8:{15F06639-3E54-4E67-ADF5-19B112A350BD}"
-        "PackageCode" = "8:{925502E5-DC85-4FA4-A8BB-E1F79D513369}"
+        "PackageCode" = "8:{6100E859-4BCD-439D-BE09-314AC99746FE}"
         "UpgradeCode" = "8:{9179F7A0-B0AA-42B1-8083-C357028F7E33}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
