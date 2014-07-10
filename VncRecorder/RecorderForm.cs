@@ -1,6 +1,9 @@
 ﻿using Ionic.Zip;
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.Drawing.Imaging;
+using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
@@ -14,13 +17,80 @@ namespace VncRecorder
 {
     public partial class RecorderForm : Form
     {
+        private class Student
+        {
+            public string Name { get; set; }
+            public string Id { get; set; }
+            public string Class { get; set; }
+            public string Seat { get; set; }
+            public DateTime Date { get; set; }
+        }
+
+        private List<Student> students;
+
         public RecorderForm()
         {
             InitializeComponent();
 
+            students = new List<Student>();
+
+            var lines = File.ReadAllLines("TestStudents.csv");
+            //Format is No,Student Name,Chinese Name,Student No,Class,Seat,Date
+            //Skip the first row!
+            for (int i = 1; i < lines.Length; i++)
+            {
+                var line = lines[i];
+                var items = line.Split(',');
+
+                var student = new Student();
+                student.Name = items[1];
+                student.Id = items[3];
+                student.Class = items[4];
+                student.Seat = items[5];
+                student.Date = DateTime.Parse(items[6]);                 
+
+                students.Add(student);
+            }
+            this.students.Sort((a, b) => a.Seat.CompareTo(b.Seat));
+
+            this.dateTimePickerTestDate.Value = DateTime.Now;
+            UpdateSeatItems();
             this.textBoxVncIp.Text = Settings.Default.VncIpPrefix;
             this.textBoxFtpIp.Text = Settings.Default.FtpIp;
             this.numericUpDownCapturePeriod.Value = Settings.Default.CapturePeriod;
+        }
+
+        public class ComboBoxItem
+        {
+
+            public string Text { get; set; }
+            public object Value { get; set; }
+
+            public ComboBoxItem(string Text, object Value)
+            {
+                this.Text = Text;
+                this.Value = Value;
+            }
+
+            public override string ToString()
+            {
+                return Text;
+            }
+        }
+
+        private void UpdateSeatItems()
+        {
+            comboBoxSeat.Items.Clear();
+            var date = this.dateTimePickerTestDate.Value;
+            
+            foreach (var student in this.students)
+            {
+                //Filter the date
+                if (student.Date.Date == date.Date)
+                {
+                    comboBoxSeat.Items.Add(new ComboBoxItem(student.Seat + "-" + student.Name, student.Id));
+                }
+            }
         }
 
         private void buttonStartRecord_Click(object sender, EventArgs e)
@@ -252,7 +322,7 @@ namespace VncRecorder
             openFileDialog1.RestoreDirectory = true;
             openFileDialog1.Multiselect = true;
 
-       
+
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 var ftpClient = new Ftp(@"ftp://" + this.textBoxFtpIp.Text, Settings.Default.FtpUserName, Settings.Default.FtpPassword);
@@ -261,7 +331,7 @@ namespace VncRecorder
                 ftpClient.createDirectory(ip);
 
                 Parallel.ForEach(openFileDialog1.FileNames, currentFilePathName =>
-                    {       
+                    {
                         var currentFileName = Path.GetFileName(currentFilePathName);
                         string tempFilePathName = Path.Combine(Path.GetDirectoryName(currentFilePathName), "T" + currentFileName);
                         if (File.Exists(tempFilePathName))
@@ -270,8 +340,8 @@ namespace VncRecorder
                         }
                         File.Copy(currentFilePathName, tempFilePathName);
 
-                       // ftpClient.delete(ip + "/" + currentFileName);
-                      
+                        // ftpClient.delete(ip + "/" + currentFileName);
+
                         var value = ftpClient.upload(ip + "/" + currentFileName, tempFilePathName);
                         // Peek behind the scenes to see how work is parallelized.
                         // But be aware: Thread contention for the Console slows down parallel loops!!!
@@ -298,6 +368,20 @@ namespace VncRecorder
             }
             return localIP;
         }
+
+        private void comboBoxSeat_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var c = (ComboBoxItem)this.comboBoxSeat.SelectedItem;
+
+            this.labelStudentName.Text = c.Text;
+            this.textBoxStudentId.Text = c.Value.ToString();
+        }
+
+        private void dateTimePickerTestDate_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateSeatItems();
+        }
+
     }
 
 }

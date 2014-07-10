@@ -47,6 +47,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.buttonDownloadTestMaterial = new System.Windows.Forms.Button();
             this.buttonUploadYourTestWork = new System.Windows.Forms.Button();
+            this.labelStudentName = new System.Windows.Forms.Label();
+            this.comboBoxSeat = new System.Windows.Forms.ComboBox();
+            this.labelSeat = new System.Windows.Forms.Label();
+            this.dateTimePickerTestDate = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapturePeriod)).BeginInit();
             this.SuspendLayout();
             // 
@@ -140,7 +144,7 @@
             0,
             0,
             0});
-            this.numericUpDownCapturePeriod.Location = new System.Drawing.Point(125, 614);
+            this.numericUpDownCapturePeriod.Location = new System.Drawing.Point(125, 639);
             this.numericUpDownCapturePeriod.Maximum = new decimal(new int[] {
             10000,
             0,
@@ -163,7 +167,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 616);
+            this.label4.Location = new System.Drawing.Point(16, 641);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(103, 13);
             this.label4.TabIndex = 10;
@@ -177,7 +181,7 @@
             // labelFtpIp
             // 
             this.labelFtpIp.AutoSize = true;
-            this.labelFtpIp.Location = new System.Drawing.Point(16, 586);
+            this.labelFtpIp.Location = new System.Drawing.Point(16, 611);
             this.labelFtpIp.Name = "labelFtpIp";
             this.labelFtpIp.Size = new System.Drawing.Size(40, 13);
             this.labelFtpIp.TabIndex = 11;
@@ -185,7 +189,7 @@
             // 
             // textBoxFtpIp
             // 
-            this.textBoxFtpIp.Location = new System.Drawing.Point(77, 586);
+            this.textBoxFtpIp.Location = new System.Drawing.Point(77, 611);
             this.textBoxFtpIp.Name = "textBoxFtpIp";
             this.textBoxFtpIp.Size = new System.Drawing.Size(152, 20);
             this.textBoxFtpIp.TabIndex = 12;
@@ -193,7 +197,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(235, 589);
+            this.label5.Location = new System.Drawing.Point(235, 614);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(203, 13);
             this.label5.TabIndex = 13;
@@ -201,7 +205,7 @@
             // 
             // buttonDownloadTestMaterial
             // 
-            this.buttonDownloadTestMaterial.Location = new System.Drawing.Point(299, 611);
+            this.buttonDownloadTestMaterial.Location = new System.Drawing.Point(299, 636);
             this.buttonDownloadTestMaterial.Name = "buttonDownloadTestMaterial";
             this.buttonDownloadTestMaterial.Size = new System.Drawing.Size(152, 23);
             this.buttonDownloadTestMaterial.TabIndex = 14;
@@ -211,7 +215,7 @@
             // 
             // buttonUploadYourTestWork
             // 
-            this.buttonUploadYourTestWork.Location = new System.Drawing.Point(475, 611);
+            this.buttonUploadYourTestWork.Location = new System.Drawing.Point(475, 636);
             this.buttonUploadYourTestWork.Name = "buttonUploadYourTestWork";
             this.buttonUploadYourTestWork.Size = new System.Drawing.Size(156, 23);
             this.buttonUploadYourTestWork.TabIndex = 15;
@@ -219,11 +223,51 @@
             this.buttonUploadYourTestWork.UseVisualStyleBackColor = true;
             this.buttonUploadYourTestWork.Click += new System.EventHandler(this.buttonUploadYourTestWork_Click);
             // 
+            // labelStudentName
+            // 
+            this.labelStudentName.AutoSize = true;
+            this.labelStudentName.Location = new System.Drawing.Point(19, 581);
+            this.labelStudentName.Name = "labelStudentName";
+            this.labelStudentName.Size = new System.Drawing.Size(0, 13);
+            this.labelStudentName.TabIndex = 16;
+            // 
+            // comboBoxSeat
+            // 
+            this.comboBoxSeat.FormattingEnabled = true;
+            this.comboBoxSeat.Location = new System.Drawing.Point(299, 583);
+            this.comboBoxSeat.Name = "comboBoxSeat";
+            this.comboBoxSeat.Size = new System.Drawing.Size(152, 21);
+            this.comboBoxSeat.TabIndex = 17;
+            this.comboBoxSeat.SelectedIndexChanged += new System.EventHandler(this.comboBoxSeat_SelectedIndexChanged);
+            // 
+            // labelSeat
+            // 
+            this.labelSeat.AutoSize = true;
+            this.labelSeat.Location = new System.Drawing.Point(238, 583);
+            this.labelSeat.Name = "labelSeat";
+            this.labelSeat.Size = new System.Drawing.Size(29, 13);
+            this.labelSeat.TabIndex = 18;
+            this.labelSeat.Text = "Seat";
+            // 
+            // dateTimePickerTestDate
+            // 
+            this.dateTimePickerTestDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerTestDate.Location = new System.Drawing.Point(475, 583);
+            this.dateTimePickerTestDate.MinDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerTestDate.Name = "dateTimePickerTestDate";
+            this.dateTimePickerTestDate.Size = new System.Drawing.Size(87, 20);
+            this.dateTimePickerTestDate.TabIndex = 19;
+            this.dateTimePickerTestDate.ValueChanged += new System.EventHandler(this.dateTimePickerTestDate_ValueChanged);
+            // 
             // RecorderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.dateTimePickerTestDate);
+            this.Controls.Add(this.labelSeat);
+            this.Controls.Add(this.comboBoxSeat);
+            this.Controls.Add(this.labelStudentName);
             this.Controls.Add(this.buttonUploadYourTestWork);
             this.Controls.Add(this.buttonDownloadTestMaterial);
             this.Controls.Add(this.label5);
@@ -268,6 +312,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button buttonDownloadTestMaterial;
         private System.Windows.Forms.Button buttonUploadYourTestWork;
+        private System.Windows.Forms.Label labelStudentName;
+        private System.Windows.Forms.ComboBox comboBoxSeat;
+        private System.Windows.Forms.Label labelSeat;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTestDate;
     }
 }
 
