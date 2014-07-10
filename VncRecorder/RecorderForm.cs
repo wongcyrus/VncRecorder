@@ -288,13 +288,19 @@ namespace VncRecorder
             var files = Settings.Default.TestMaterials.Split(',');
 
             var ftpClient = new Ftp(@"ftp://" + this.textBoxFtpIp.Text, Settings.Default.FtpUserName, Settings.Default.FtpPassword);
-            var desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            
+            var downloadFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);            
+            string drive = Path.GetPathRoot(@"D:\");   
+            if (!this.checkBoxDesktop.Checked && Directory.Exists(drive))
+            {
+                downloadFolderPath = drive;
+            }
 
             Parallel.ForEach(files, currentFile =>
                 {
                     // The more computational work you do here, the greater 
                     // the speedup compared to a sequential foreach loop.
-                    var filepathname = Path.Combine(desktopPath, currentFile);
+                    var filepathname = Path.Combine(downloadFolderPath, currentFile);
                     if (File.Exists(filepathname))
                     {
                         File.Delete(filepathname);

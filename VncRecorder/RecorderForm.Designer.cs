@@ -51,6 +51,7 @@
             this.comboBoxSeat = new System.Windows.Forms.ComboBox();
             this.labelSeat = new System.Windows.Forms.Label();
             this.dateTimePickerTestDate = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxDesktop = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownCapturePeriod)).BeginInit();
             this.SuspendLayout();
             // 
@@ -215,7 +216,7 @@
             // 
             // buttonUploadYourTestWork
             // 
-            this.buttonUploadYourTestWork.Location = new System.Drawing.Point(475, 636);
+            this.buttonUploadYourTestWork.Location = new System.Drawing.Point(616, 631);
             this.buttonUploadYourTestWork.Name = "buttonUploadYourTestWork";
             this.buttonUploadYourTestWork.Size = new System.Drawing.Size(156, 23);
             this.buttonUploadYourTestWork.TabIndex = 15;
@@ -243,7 +244,7 @@
             // labelSeat
             // 
             this.labelSeat.AutoSize = true;
-            this.labelSeat.Location = new System.Drawing.Point(238, 583);
+            this.labelSeat.Location = new System.Drawing.Point(235, 586);
             this.labelSeat.Name = "labelSeat";
             this.labelSeat.Size = new System.Drawing.Size(29, 13);
             this.labelSeat.TabIndex = 18;
@@ -252,18 +253,29 @@
             // dateTimePickerTestDate
             // 
             this.dateTimePickerTestDate.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerTestDate.Location = new System.Drawing.Point(475, 583);
+            this.dateTimePickerTestDate.Location = new System.Drawing.Point(457, 584);
             this.dateTimePickerTestDate.MinDate = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
             this.dateTimePickerTestDate.Name = "dateTimePickerTestDate";
             this.dateTimePickerTestDate.Size = new System.Drawing.Size(87, 20);
             this.dateTimePickerTestDate.TabIndex = 19;
             this.dateTimePickerTestDate.ValueChanged += new System.EventHandler(this.dateTimePickerTestDate_ValueChanged);
             // 
+            // checkBoxDesktop
+            // 
+            this.checkBoxDesktop.AutoSize = true;
+            this.checkBoxDesktop.Location = new System.Drawing.Point(464, 639);
+            this.checkBoxDesktop.Name = "checkBoxDesktop";
+            this.checkBoxDesktop.Size = new System.Drawing.Size(106, 17);
+            this.checkBoxDesktop.TabIndex = 20;
+            this.checkBoxDesktop.Text = "Save to Desktop";
+            this.checkBoxDesktop.UseVisualStyleBackColor = true;
+            // 
             // RecorderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 661);
+            this.Controls.Add(this.checkBoxDesktop);
             this.Controls.Add(this.dateTimePickerTestDate);
             this.Controls.Add(this.labelSeat);
             this.Controls.Add(this.comboBoxSeat);
@@ -316,6 +328,7 @@
         private System.Windows.Forms.ComboBox comboBoxSeat;
         private System.Windows.Forms.Label labelSeat;
         private System.Windows.Forms.DateTimePicker dateTimePickerTestDate;
+        private System.Windows.Forms.CheckBox checkBoxDesktop;
     }
 }
 
