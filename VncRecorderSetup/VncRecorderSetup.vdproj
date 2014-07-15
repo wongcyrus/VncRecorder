@@ -33,6 +33,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_FC6580DF95524053941E616F693B9271"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E409C6246E1041BBB696A0CF4113DB20"
         "MsmSig" = "8:_UNDEFINED"
@@ -106,6 +112,14 @@
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.5"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.5 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.5"
+                    }
+                }
             }
         }
     }
@@ -198,6 +212,26 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_FC6580DF95524053941E616F693B9271"
+            {
+            "SourcePath" = "8:..\\VncRecorder\\TestStudents.csv"
+            "TargetName" = "8:TestStudents.csv"
+            "Tag" = "8:"
+            "Folder" = "8:_4BC2250D9C9943E4AC08974D19680AF6"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -255,7 +289,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:VncRecorderSetup"
         "ProductCode" = "8:{15F06639-3E54-4E67-ADF5-19B112A350BD}"
-        "PackageCode" = "8:{6100E859-4BCD-439D-BE09-314AC99746FE}"
+        "PackageCode" = "8:{70824C12-4840-44DC-8B12-68DF16881082}"
         "UpgradeCode" = "8:{9179F7A0-B0AA-42B1-8083-C357028F7E33}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"

@@ -1,4 +1,5 @@
 ﻿using Ionic.Zip;
+using log4net;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Net;
 using System.Net.Sockets;
+using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,6 +19,7 @@ namespace VncRecorder
 {
     public partial class RecorderForm : Form
     {
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private class Student
         {
             public string Name { get; set; }
@@ -34,7 +37,9 @@ namespace VncRecorder
 
             students = new List<Student>();
 
-            var lines = File.ReadAllLines("TestStudents.csv");
+            var myExeDir = (new FileInfo(Application.ExecutablePath)).Directory.FullName;
+
+            var lines = File.ReadAllLines(Path.Combine(myExeDir, "TestStudents.csv"));
             //Format is No,Student Name,Chinese Name,Student No,Class,Seat,Date
             //Skip the first row!
             for (int i = 1; i < lines.Length; i++)
@@ -47,7 +52,7 @@ namespace VncRecorder
                 student.Id = items[3];
                 student.Class = items[4];
                 student.Seat = items[5];
-                student.Date = DateTime.Parse(items[6]);                 
+                student.Date = DateTime.Parse(items[6]);
 
                 students.Add(student);
             }
@@ -82,7 +87,7 @@ namespace VncRecorder
         {
             comboBoxSeat.Items.Clear();
             var date = this.dateTimePickerTestDate.Value;
-            
+
             foreach (var student in this.students)
             {
                 //Filter the date
@@ -288,9 +293,9 @@ namespace VncRecorder
             var files = Settings.Default.TestMaterials.Split(',');
 
             var ftpClient = new Ftp(@"ftp://" + this.textBoxFtpIp.Text, Settings.Default.FtpUserName, Settings.Default.FtpPassword);
-            
-            var downloadFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);            
-            string drive = Path.GetPathRoot(@"D:\");   
+
+            var downloadFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            string drive = Path.GetPathRoot(@"D:\");
             if (!this.checkBoxDesktop.Checked && Directory.Exists(drive))
             {
                 downloadFolderPath = drive;
