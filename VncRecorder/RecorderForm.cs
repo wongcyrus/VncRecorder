@@ -52,8 +52,12 @@ namespace VncRecorder
                 student.Id = items[3];
                 student.Class = items[4];
                 student.Seat = items[5];
-                student.Date = DateTime.Parse(items[6]);
-
+               
+                //7/17/2014
+                string dateString = items[6];
+                string[] datePart = dateString.Split(new[]{'/'});
+                student.Date = new DateTime(int.Parse(datePart[2]), int.Parse(datePart[0]), int.Parse(datePart[1]));
+                               
                 students.Add(student);
             }
             this.students.Sort((a, b) => a.Seat.CompareTo(b.Seat));
